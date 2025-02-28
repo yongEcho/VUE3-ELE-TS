@@ -75,13 +75,13 @@ export interface LoginFormData {
 /** 登录响应 */
 export interface LoginResult {
   /** 访问令牌 */
-  accessToken: string;
+  access_token: string;
   /** 刷新令牌 */
-  refreshToken: string;
+  refreshToken?: string;
   /** 令牌类型 */
-  tokenType: string;
+  token_type: string;
   /** 过期时间(秒) */
-  expiresIn: number;
+  expires_in: number;
 }
 
 /** 验证码信息 */

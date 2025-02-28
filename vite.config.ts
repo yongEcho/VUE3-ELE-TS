@@ -44,6 +44,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       },
     },
     server: {
+      hmr: true,// 热更新
       host: "0.0.0.0",
       port: +env.VITE_APP_PORT,
       open: false,

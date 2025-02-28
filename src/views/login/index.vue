@@ -205,12 +205,10 @@ async function handleLoginSubmit() {
       userStore
         .login(loginFormData.value)
         .then(async () => {
-          // await userStore.getUserInfo();
-          // // 需要在路由跳转前加载字典数据，否则会出现字典数据未加载完成导致页面渲染异常
-          // await dictStore.loadDictionaries();
-          // // 跳转到登录前的页面
-          // const { path, queryParams } = parseRedirect();
-          // router.push({ path: path, query: queryParams });
+          await userStore.getUserInfo();
+          // 跳转到登录前的页面
+          const { path, queryParams } = parseRedirect();
+          router.push({ path: path, query: queryParams });
         })
         .catch(() => {
           // getCaptcha();
@@ -279,7 +277,8 @@ onMounted(() => {
   height: 100%;
   padding: 20px;
   overflow-y: auto;
-  background: url("@/assets/images/login-bg.jpg") no-repeat center right;
+  background: url("@/assets/images/bg.png") no-repeat center center;
+  background-size: cover;
 
   .login-header {
     position: absolute;
